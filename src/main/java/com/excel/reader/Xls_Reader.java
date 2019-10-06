@@ -11,6 +11,7 @@ import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
@@ -55,9 +56,35 @@ public class Xls_Reader {
 			System.out.println(number);
 			return number;
 			
-		}
+		}}
+		String tc_name="create campaign";
+		
+		public String getTestData(String sheetName)
+		{
+			
+			int firstRow =  sheet.getFirstRowNum();
+			int rowCount =  sheet.getLastRowNum();
+			
+			Row firstRowValue = sheet.getRow(0);
+			int length = firstRowValue.getLastCellNum();
+			
+			
+			
+			
+			for(int i=0;i<length;i++){
+				
+				Cell cell2=firstRowValue.getCell(i);
+				//SheetHeader.add(cell2.getStringCellValue());
+			}
+				
+				return null;
+				
+			}
+			
+		
 
-	}
+
+	
 	// returns the data from a cell
 
 	public String getCellData(String sheetName, String colName, int rowNum) {
